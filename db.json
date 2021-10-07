@@ -1,42 +1,42 @@
 {
-  "logs": [
-    {
-      "id": 1,
-      "message": "Log - 1",
-      "attention": false,
-      "date": "6 Oct, 2021 Wednesday",
-      "tech": "John Doe"
-    },
-    {
-      "id": 2,
-      "message": "Log - 2",
-      "attention": false,
-      "date": "5 Oct, 2021 Tuesday",
-      "tech": "Sara Wilson"
-    },
-    {
-      "id": 3,
-      "message": "Log - 3",
-      "attention": true,
-      "date": "7 Oct, 2021 Thursday",
-      "tech": "Mike Dane"
-    }
-  ],
-  "techs": [
-    {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe"
-    },
-    {
-      "id": 2,
-      "firstName": "Sara",
-      "lastName": "Wilson"
-    },
-    {
-      "id": 3,
-      "firstName": "Mike",
-      "lastName": "Dane"
-    }
-  ]
+	"logs": [
+		{
+			"id": 1,
+			"message": "Changed Hard-drive on workstation 005",
+			"attention": false,
+			"date": "6 Oct 2021 ",
+			"tech": "John Doe"
+		},
+		{
+			"id": 2,
+			"message": "Workstation 007 LAN connection not working",
+			"attention": true,
+			"date": "5 Oct 2021",
+			"tech": "Sara Wilson"
+		},
+		{
+			"id": 3,
+			"message": "Changed memory on workstation 008",
+			"attention": false,
+			"date": "7 Oct, 2021",
+			"tech": "Mike Dane"
+		}
+	],
+	"techs": [
+		{
+			"id": 1,
+			"firstName": "John",
+			"lastName": "Doe"
+		},
+		{
+			"id": 2,
+			"firstName": "Sara",
+			"lastName": "Wilson"
+		},
+		{
+			"id": 3,
+			"firstName": "Mike",
+			"lastName": "Dane"
+		}
+	]
 }
