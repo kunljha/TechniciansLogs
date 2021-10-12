@@ -90,7 +90,7 @@ const AddLogModal = ({ addLog }) => {
 				<a
 					href='#!'
 					className='modal-close waves-effect waves-light btn blue'
-					onChange={saveNewLog}
+					onClick={saveNewLog}
 				>
 					Enter
 				</a>

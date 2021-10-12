@@ -1,42 +1,42 @@
 {
-	"logs": [
-		{
-			"id": 1,
-			"message": "Changed Hard-drive on workstation 005",
-			"attention": false,
-			"date": "6 Oct 2021 ",
-			"tech": "John Doe"
-		},
-		{
-			"id": 2,
-			"message": "Workstation 007 LAN connection not working",
-			"attention": true,
-			"date": "5 Oct 2021",
-			"tech": "Sara Wilson"
-		},
-		{
-			"id": 3,
-			"message": "Changed memory on workstation 008",
-			"attention": false,
-			"date": "7 Oct, 2021",
-			"tech": "Mike Dane"
-		}
-	],
-	"techs": [
-		{
-			"id": 1,
-			"firstName": "John",
-			"lastName": "Doe"
-		},
-		{
-			"id": 2,
-			"firstName": "Sara",
-			"lastName": "Wilson"
-		},
-		{
-			"id": 3,
-			"firstName": "Mike",
-			"lastName": "Dane"
-		}
-	]
+  "logs": [
+    {
+      "message": "Fixed LAN connection on workstation 004",
+      "attention": false,
+      "tech": "John Doe",
+      "date": "2021-10-12T07:35:44.741Z",
+      "id": 1
+    },
+    {
+      "message": "Hard Drive broke at workstation 007",
+      "attention": true,
+      "tech": "Sara Wilson",
+      "date": "2021-10-12T14:38:02.401Z",
+      "id": 2
+    },
+    {
+      "message": "Power Supply broke at workstation  012",
+      "attention": true,
+      "tech": "John Doe",
+      "date": "2021-10-12T14:55:59.144Z",
+      "id": 3
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": 2,
+      "firstName": "Sara",
+      "lastName": "Wilson"
+    },
+    {
+      "id": 3,
+      "firstName": "Mike",
+      "lastName": "Dane"
+    }
+  ]
 }
