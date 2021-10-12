@@ -8,7 +8,7 @@ const EditLogModal = () => {
 
 	const onSubmit = (e) => {
 		if (message === '' || tech === '') {
-			M.toast({ html: 'Please enter a Message and Technician' })
+			M.toast({ html: 'Please enter a Message and select a Technician' })
 		} else {
 			console.log(message, tech, attention)
 			setMessage('')
@@ -78,7 +78,7 @@ const EditLogModal = () => {
 				<a
 					href='#!'
 					className='modal-close waves-effect waves-light btn blue'
-					onChange={onSubmit}
+					onClick={onSubmit}
 				>
 					Enter
 				</a>

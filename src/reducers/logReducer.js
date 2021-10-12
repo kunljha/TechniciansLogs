@@ -1,9 +1,11 @@
 import {
 	GET_LOGS,
-	SET_LOADING,
-	LOGS_ERROR,
 	ADD_LOG,
 	DELETE_LOG,
+	LOGS_ERROR,
+	SET_LOADING,
+	SET_CURRENT_LOG,
+	CLEAR_CURRENT_LOG,
 } from '../actions/types'
 
 const initialState = {
@@ -37,6 +39,16 @@ const logReducer = (state = initialState, action) => {
 			return {
 				...state,
 				loading: true,
+			}
+		case SET_CURRENT_LOG:
+			return {
+				...state,
+				current: action.payload,
+			}
+		case CLEAR_CURRENT_LOG:
+			return {
+				...state,
+				current: null,
 			}
 		case LOGS_ERROR:
 			console.error(action.payload)
