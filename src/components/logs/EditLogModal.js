@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import M from 'materialize-css/dist/js/materialize.min.js'
+import { updateLog } from '../../actions/logActions'
 
-const EditLogModal = ({ current }) => {
+const EditLogModal = ({ current, updateLog }) => {
 	const [message, setMessage] = useState('')
 	const [attention, setAttention] = useState(false)
 	const [tech, setTech] = useState('')
@@ -16,11 +17,19 @@ const EditLogModal = ({ current }) => {
 		}
 	}, [current])
 
-	const onSubmit = (e) => {
+	const updateEditedLog = (e) => {
 		if (message === '' || tech === '') {
 			M.toast({ html: 'Please enter a Message and select a Technician' })
 		} else {
-			console.log(message, tech, attention)
+			updateLog({
+				id: current.id,
+				message,
+				attention,
+				tech,
+				date: new Date(),
+			})
+			M.toast({ html: `Log updated by ${tech}` })
+
 			setMessage('')
 			setTech('')
 			setAttention(false)
@@ -85,7 +94,7 @@ const EditLogModal = ({ current }) => {
 				<a
 					href='#!'
 					className='modal-close waves-effect waves-light btn blue'
-					onClick={onSubmit}
+					onClick={updateEditedLog}
 				>
 					Enter
 				</a>
@@ -107,4 +116,4 @@ const mapStateToProps = (state) => ({
 	current: state.log.current,
 })
 
-export default connect(mapStateToProps, {})(EditLogModal)
+export default connect(mapStateToProps, { updateLog })(EditLogModal)
