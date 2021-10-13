@@ -3,6 +3,7 @@ import {
 	ADD_LOG,
 	DELETE_LOG,
 	UPDATE_LOG,
+	SEARCH_LOGS,
 	LOGS_ERROR,
 	SET_LOADING,
 	SET_CURRENT_LOG,
@@ -120,6 +121,14 @@ export const updateLog = (log) => async (dispatch) => {
 			type: LOGS_ERROR,
 			payload: err.response.data,
 		})
+	}
+}
+
+// search logs by input-text in searchBar
+export const searchLogs = (text) => {
+	return {
+		type: SEARCH_LOGS,
+		payload: text.toLowerCase(),
 	}
 }
 

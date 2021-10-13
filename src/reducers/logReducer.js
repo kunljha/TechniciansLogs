@@ -3,6 +3,7 @@ import {
 	ADD_LOG,
 	DELETE_LOG,
 	UPDATE_LOG,
+	SEARCH_LOGS,
 	LOGS_ERROR,
 	SET_LOADING,
 	SET_CURRENT_LOG,
@@ -43,6 +44,16 @@ const logReducer = (state = initialState, action) => {
 					return log.id === action.payload.id ? action.payload : log
 				}),
 				loading: false,
+			}
+		case SEARCH_LOGS:
+			return {
+				...state,
+				logs: state.logs.filter((log) => {
+					return (
+						log.message.toLowerCase().includes(action.payload) ||
+						log.tech.toLowerCase().includes(action.payload)
+					)
+				}),
 			}
 		case SET_LOADING:
 			return {
