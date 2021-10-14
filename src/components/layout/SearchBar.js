@@ -12,7 +12,10 @@ const SearchBar = ({ searchLogs }) => {
 						<input
 							id='search'
 							type='search'
-							onChange={(e) => searchLogs(e.target.value)}
+							placeholder='Search Logs...'
+							onChange={(e) => {
+								searchLogs(e.target.value)
+							}}
 							required
 						/>
 						<label className='label-icon' htmlFor='search'>

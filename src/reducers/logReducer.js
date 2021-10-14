@@ -48,12 +48,7 @@ const logReducer = (state = initialState, action) => {
 		case SEARCH_LOGS:
 			return {
 				...state,
-				logs: state.logs.filter((log) => {
-					return (
-						log.message.toLowerCase().includes(action.payload) ||
-						log.tech.toLowerCase().includes(action.payload)
-					)
-				}),
+				logs: action.payload,
 			}
 		case SET_LOADING:
 			return {

@@ -30,7 +30,7 @@ const LogItem = ({ log, deleteLog, setCurrentLog }) => {
 					className='secondary-content'
 					onClick={() => {
 						deleteLog(log.id)
-						M.toast({ html: 'Log Deleted' })
+						M.toast({ html: `Log Deleted by ${log.tech}` })
 					}}
 				>
 					<i className='material-icons red-text'>delete</i>
