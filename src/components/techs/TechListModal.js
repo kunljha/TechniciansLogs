@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 import TechItem from './TechItem'
+import PropTypes from 'prop-types'
+import { getTechs } from '../../actions/techActions'
 
-const TechListModal = () => {
-	const [techs, setTechs] = useState([])
-	const [loading, setLoading] = useState(false)
-
-	const getTechs = async () => {
-		setLoading(true)
-		const res = await fetch('/techs') // because proxy is setup
-		const data = await res.json()
-
-		setLoading(false)
-		setTechs(data)
-	}
-
+const TechListModal = ({ techs, loading, getTechs }) => {
 	useEffect(() => {
 		getTechs()
+		// eslint-disable-next-line
 	}, [])
 
 	return (
@@ -38,4 +30,15 @@ const TechListModal = () => {
 	)
 }
 
-export default TechListModal
+TechListModal.propTypes = {
+	techs: PropTypes.array.isRequired,
+	loading: PropTypes.bool.isRequired,
+	getTechs: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = (state) => ({
+	techs: state.tech.techs,
+	loading: state.tech.loading,
+})
+
+export default connect(mapStateToProps, { getTechs })(TechListModal)
